@@ -5,16 +5,16 @@ AUTHOR : DURIEL E. HARRIS\n`);
 const fs = require("fs");
 const readline = require("readline");
 
-const rl = readline.createInterface({
+const sol = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
 function promptForLineNumber() {
-  rl.question('Enter the line number (or "q" to quit): ', (lineNumber) => {
+  sol.question('Enter the line number (or "q" to quit): ', (lineNumber) => {
     if (lineNumber.toLowerCase() === "q") {
       console.log("Thankyou for using the System, have a Great Day!");
-      rl.close();
+      sol.close();
       return;
     }
 
