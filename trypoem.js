@@ -37,10 +37,10 @@ function readAndPrintLine(lineNumber) {
     const lines = data.split("\n");
     const desiredLine = lines[lineNumber - 1];
 
-    if (desiredLine) {
+    if (desiredLine && desiredLine.trim()) {
       console.log(desiredLine);
     } else {
-      console.log("Line number out of range.");
+      console.log("Line Number is Empty, please try again.");
     }
 
     promptForLineNumber();
