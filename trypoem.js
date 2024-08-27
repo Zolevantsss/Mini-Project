@@ -11,27 +11,39 @@ const sol = readline.createInterface({
 });
 
 function promptForLineNumber() {
-  sol.question('Enter the line number (or "q" to quit): ', (lineNumber) => {
-    if (lineNumber.toLowerCase() === "q") {
-      console.log("Thankyou for using the System, have a Great Day!");
-      sol.close();
+  sol.question('Enter the line number (or "q" to quit): ', handleUserInput);
+}
+
+function handleUserInput(lineNumber) {
+  if (lineNumber.toLowerCase() === "q") {
+    quitProgram();
+  } else {
+    readAndPrintLine(lineNumber);
+  }
+}
+
+function quitProgram() {
+  console.log("Thank you for using the System, have a Great Day!");
+  sol.close();
+}
+
+function readAndPrintLine(lineNumber) {
+  fs.readFile("poem.txt", "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading file");
       return;
     }
 
-    fs.readFile("poem.txt", "utf8", (err, data) => {
-      if (err) throw err;
+    const lines = data.split("\n");
+    const desiredLine = lines[lineNumber - 1];
 
-      const lines = data.split("\n");
-      const desiredLine = lines[lineNumber - 1];
+    if (desiredLine) {
+      console.log(desiredLine);
+    } else {
+      console.log("Line number out of range.");
+    }
 
-      if (desiredLine) {
-        console.log(`${desiredLine}`);
-      } else {
-        console.log("Line number out of range.");
-      }
-
-      promptForLineNumber();
-    });
+    promptForLineNumber();
   });
 }
 
