@@ -11,7 +11,7 @@ const sol = readline.createInterface({
 });
 
 function promptForLineNumber() {
-  sol.question('Enter the line number (or "q" to quit): ', handleUserInput);
+  sol.question("Enter the line number (or 'q' to quit): ", handleUserInput);
 }
 
 function handleUserInput(lineNumber) {
@@ -48,3 +48,5 @@ function readAndPrintLine(lineNumber) {
 }
 
 promptForLineNumber();
+
+module.exports = { promptForLineNumber };
