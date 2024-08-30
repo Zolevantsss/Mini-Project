@@ -3,6 +3,7 @@
 ## Introduction
 
 This program reads a text file, with the ORACLE poem in it.
+It reads the poem line number that the user has inputted.
 
 ## How to Run
 
@@ -29,3 +30,10 @@ Enter the line number (or "q" to quit):
 | number | any digits [0..9]|
 | q | to quit |
 | | |
+
+
+If the user inputs any character other than `[0..9]` or `q`, below is a sample error message:
+
+```
+Line Number is Empty, please try again.
+```
