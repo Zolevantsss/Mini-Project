@@ -1,0 +1,12 @@
+{
+  "name": "mini",
+  "version": "1.0.0",
+  "main": "trypoem.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
